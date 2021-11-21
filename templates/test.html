@@ -1,0 +1,30 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+<h1>Dammy page for tesing</h1>
+<body>
+    <form method="POST" action="/testClick">
+    <p><input type="text" name="name"></p>
+    <p><input type="submit" value="Search"></p>
+    </form>
+    <table style="text-align: center;" width="40%" border="1">
+        <div>
+            {% for n in data %}
+                <tr style="text-align: center;">
+                    {% for d in n %}
+                        <td>{{d}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </div>
+    </table>
+
+    <p><a href="/">Go Back</a></p>
+  
+</body>

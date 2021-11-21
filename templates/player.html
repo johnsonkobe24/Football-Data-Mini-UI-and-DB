@@ -1,0 +1,45 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+
+<body>
+    <h1>Let's do some query on Player!</h1>
+    
+    <form method="POST" action="/checkPlayer">
+    <p>Name:            <input type="text" name="name"></p>
+    <p>Age:             <input type="text" name="age"></p>
+    <p>Position:        <input type="text" name="pos"></p>
+    <p>Nationality:     <input type="text" name="nation"></p>
+    <p>Team:            <input type="text" name="team"></p>
+    <p>Season:          <input type="text" name="season"></p>
+    <p>Goals:           <input type="text" name="g"></p>
+    <p>Assists:         <input type="text" name="a"></p>
+    <p>                 <input type="submit" value="Search"></p>
+    </form>
+
+
+    <table style="text-align: center;" width="100%" border="1">
+        <div>
+            {% for n in data %}
+                <tr style="text-align: center;">
+                    {% for d in n %}
+                        <td>{{d}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </div>
+    </table>
+
+    <p><a href="/">Go Back</a></p>
+
+
+</body>
+
+
+</html>

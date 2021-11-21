@@ -1,0 +1,41 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+
+<body>
+    <h1>Which league you most prefer?</h1>
+    
+    <form method="POST" action="/checkLeague">
+    <p>Name:                     <input type="text" name="name"></p>
+    <p>Country:                  <input type="text" name="country"></p>
+    <p>Rank                      <input type="text" name="rank"></p>
+    <p>Avg Goals:                <input type="text" name="avg"></p>
+    <p>                          <input type="submit" value="Search"></p>
+    </form>
+
+
+    <table style="text-align: center;" width="40%" border="1">
+        <div>
+            {% for n in data %}
+                <tr style="text-align: center;">
+                    {% for d in n %}
+                        <td>{{d}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </div>
+    </table>
+
+    <p><a href="/">Go Back</a></p>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+
+<body>
+    <h1>Respect Which Coach?</h1>
+    
+    <form method="POST" action="/checkCoach">
+    <p>Name:            <input type="text" name="name"></p>
+    <p>Nationality:     <input type="text" name="nation"></p>
+    <p>Age:             <input type="text" name="age"></p>
+    <p>Team:            <input type="text" name="team"></p>
+    <p>Season:          <input type="text" name="season"></p>
+    <p>Rank:            <input type="text" name="rank"></p>
+    <p>Wins:            <input type="text" name="win"></p>
+    <p>                 <input type="submit" value="Search"></p>
+</form>
+
+
+    <table style="text-align: center;" width="40%" border="1">
+        <div>
+            {% for n in data %}
+                <tr style="text-align: center;">
+                    {% for d in n %}
+                        <td>{{d}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </div>
+    </table>
+
+<p><a href="/">Go Back</a></p>
+
+
+</body>
+
+
+</html>

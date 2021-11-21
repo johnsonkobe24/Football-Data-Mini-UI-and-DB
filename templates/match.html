@@ -1,0 +1,44 @@
+<html>
+    <style>
+    body{ 
+      font-size: 10pt;
+      font-family: arial;
+      text-align: center;
+    }
+    </style>
+
+
+<body>
+    <h1>Soccer Match is Amazing!</h1>
+    
+    <form method="POST" action="/checkMatch">
+    <p>Home:            <input type="text" name="home"></p>
+    <p>Away:            <input type="text" name="away"></p>
+    <p>Date:            <input type="text" name="date"></p>
+    <p>League:          <input type="text" name="league"></p>
+    <p>Season:          <input type="text" name="season"></p>
+    <p>Home Goals:         <input type="text" name="hg"></p>
+    <p>Away Goals:         <input type="text" name="ag"></p>
+    <p>                 <input type="submit" value="Search"></p>
+    </form>
+
+
+    <table style="text-align: center;" width="100%" border="1">
+        <div>
+            {% for n in data %}
+                <tr style="text-align: center;">
+                    {% for d in n %}
+                        <td>{{d}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </div>
+    </table>
+
+    <p><a href="/">Go Back</a></p>
+
+
+</body>
+
+
+</html>

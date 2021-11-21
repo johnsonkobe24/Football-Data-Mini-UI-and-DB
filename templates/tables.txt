@@ -1,0 +1,69 @@
+// leagues
+league_name     | character varying(127) |           | not null | 
+country         | character varying(127) |           |          | 
+number_of_teams | integer                |           |          | 
+sports_type     | character varying(127) |           |          | 
+
+
+// teams
+team_name | character varying(127) |           | not null | 
+team_city | character varying(127) |           |          | 
+stadium   | character varying(127) |           |          | 
+
+// join_in
+seasons_in_league | character varying(127) |           |          | 
+team_name         | character varying(127) |           | not null | 
+league_name       | character varying(127) |           | not null | 
+
+// team_season_performance
+team_name        | character varying(127) |           | not null | 
+season           | character varying(127) |           | not null | 
+rank             | integer                |           |          | 
+wins             | integer                |           |          | 
+losses           | integer                |           |          | 
+goal_scored      | integer                |           |          | 
+goal_conceded    | integer                 |           |          | 
+goal_differences | integer                |           |          | 
+cards            | integer                |           |          | 
+
+
+// players
+player_fullname    | character varying(127) |           | not null | 
+player_age         | integer                |           |          | 
+player_position    | character varying(127) |           |          | 
+player_nationality | character varying(127) |           |          | 
+
+
+// player_season_performance
+player_fullname | character varying(127) |           | not null | 
+player_team     | character(127)         |           | not null | 
+season          | character(127)         |           | not null | 
+appearance      | integer                |           |          | 
+goals           | integer                |           |          | 
+assists         | integer                |           |          | 
+penalty_goals   | integer                |           |          | 
+goals_conceded  | integer                |           |          | 
+yellow_cards    | integer                |           |          | 
+red_cards       | integer                |           |          | 
+
+
+// coach_seasons
+coach_name      | character varying(127) |           | not null | 
+coach_team      | character varying(127) |           | not null | 
+coached_seasons | character varying(127) |     
+
+// coaches
+coach_name        | character varying(127) |           | not null | 
+coach_age         | integer                |           |          | 
+coach_nationality | character varying(127) |           |          | 
+
+// matches
+team_home    | character varying(127) |           | not null | 
+team_away    | character varying(127) |           | not null | 
+date         | date                   |           | not null | 
+match_league | character varying(127) |           |          | 
+match_season | character varying(127) |           |          | 
+home_goals   | integer                |           |          | 
+away_goals   | integer                |           |          | 
+referee      | character varying(127) |           |          | 
+attendance   | integer                |           |          | 
